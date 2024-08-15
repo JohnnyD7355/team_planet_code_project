@@ -19,32 +19,36 @@ function calculateValues(chosenFactors, factorUnit) {
             measurement = 'cm';
             break;
         case 'weight':
-            measurement = 'lm';
+            measurement = 'kg';
             break;
         default:
             measurement = 'units';
     };
 // Iterate over the results and log each one
-    
-}
-
-
-
-function calculateUserInput(inputValue) {
-    let results = {};
-    for (let something in gravityFactors) {
-        results = parseFloat(inputValue * gravityFactors[something]).toFixed(2)
+    for (let planet in factors) {
+        console.log(`Your weight on Mercury is xxkg`);
+        console.log(`Your ${factorType} on ${planet} is ${factors[planet]}${measurement}`);
     }
 }
+
+
+
+
 
 // Define a function to get user inputs for factor type and value
 // Prompt the user to enter the type of factor they want to calculate
 // Prompt the user to enter the numerical value of the factor
 // Call the showUserFactors function with the user inputs and the gravity factors
 // Expose getUserFactors globally
-function getUserInput() {
-    console.log("Enter your values in kg");
-    const userPrompt = prompt(">");
-    console.log("What do you want to calculate on different planets");
-};
-global.calculateUserInput = calculateUserInput;
+function gerUserInput() {
+    console.log("Enter what you want to measure (please enter 'weight' or 'jump'");
+    const factorType = prompt('>>');
+
+    console.log("Enter what the value of your factor is (please enter )");
+    const factorValue = prompt('>>');
+    showUserFactors(factorType, factorValue);
+}
+
+
+global.showUserFactors = showUserFactors;
+global.getUserInput = getUserInput;
