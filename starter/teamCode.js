@@ -7,27 +7,27 @@ function calculateValues(chosenFactors, factorUnit) {
 // Initialize an object to hold the results
     const factors = {};
 // Declare a variable to hold the unit of measurement
-    let measurement;
+    let factorMeasurement;
 // Iterate over each item in the gravityFactors object
     for (let planet in gravityFactors) {
 // Calculate the factor multiplied by the input value and round it to two decimals
         factors[planet] = parseFloat((factorType * gravityFactors[planet]).toFixed(2));
     };
 // Switch case to determine the measurement unit based on factor type
-    switch (factoryType) {
+    switch (factorType) {
         case 'jump':
-            measurement = 'cm';
+            factorMeasurement = 'cm';
             break;
         case 'weight':
-            measurement = 'kg';
+            factorMeasurement = 'kg';
             break;
         default:
-            measurement = 'units';
+            factorMeasurement = 'units';
     };
 // Iterate over the results and log each one
     for (let planet in factors) {
         console.log(`Your weight on Mercury is xxkg`);
-        console.log(`Your ${factorType} on ${planet} is ${factors[planet]}${measurement}`);
+        console.log(`Your ${factorType} on ${planet} is ${factors[planet]}${factorMeasurement}`);
     }
 }
 
@@ -40,12 +40,14 @@ function calculateValues(chosenFactors, factorUnit) {
 // Prompt the user to enter the numerical value of the factor
 // Call the showUserFactors function with the user inputs and the gravity factors
 // Expose getUserFactors globally
-function gerUserInput() {
+function getUserInput() {
     console.log("Enter what you want to measure (please enter 'weight' or 'jump'");
     const factorType = prompt('>>');
 
     console.log("Enter what the value of your factor is (please enter )");
     const factorValue = prompt('>>');
+
+    
     showUserFactors(factorType, factorValue);
 }
 
