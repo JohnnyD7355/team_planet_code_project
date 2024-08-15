@@ -48,6 +48,15 @@ function gerUserInput() {
     const factorValue = prompt('>>');
     showUserFactors(factorType, factorValue);
 
+    console.log("Enter what the planet of your factor is (please enter )");
+    const factorPlanets = prompt('>>');
+
+    console.log("Enter what the system of your factor is (please enter )");
+    const factorSystem = prompt('>>');
+
+    console.log("Enter what the measurement of your factor is (please enter )");
+    const factorMeasurement = prompt('>>');
+
 
 }
 
