@@ -3,17 +3,17 @@ const prompt = require('prompt-sync')();
 // Import the gravityFactors module which contains factors for different planets
 let gravityFactors = require('./utils/earthGravityFactors.js');
 // Define a function to show user factors based on input type and value
-function calculateValues(chosenFactors, factorUnit) { 
-// Initialize an object to hold the results
+function calculateValues(chosenFactors, factorUnit) {
+    // Initialize an object to hold the results
     const factors = {};
-// Declare a variable to hold the unit of measurement
+    // Declare a variable to hold the unit of measurement
     let measurement;
-// Iterate over each item in the gravityFactors object
+    // Iterate over each item in the gravityFactors object
     for (let planet in gravityFactors) {
-// Calculate the factor multiplied by the input value and round it to two decimals
+        // Calculate the factor multiplied by the input value and round it to two decimals
         factors[planet] = parseFloat((factorType * gravityFactors[planet]).toFixed(2));
     };
-// Switch case to determine the measurement unit based on factor type
+    // Switch case to determine the measurement unit based on factor type
     switch (factoryType) {
         case 'jump':
             measurement = 'cm';
@@ -24,7 +24,7 @@ function calculateValues(chosenFactors, factorUnit) {
         default:
             measurement = 'units';
     };
-// Iterate over the results and log each one
+    // Iterate over the results and log each one
     for (let planet in factors) {
         console.log(`Your weight on Mercury is xxkg`);
         console.log(`Your ${factorType} on ${planet} is ${factors[planet]}${measurement}`);
@@ -47,6 +47,8 @@ function gerUserInput() {
     console.log("Enter what the value of your factor is (please enter )");
     const factorValue = prompt('>>');
     showUserFactors(factorType, factorValue);
+
+
 }
 
 
