@@ -4,19 +4,17 @@ const prompt = require('prompt-sync')();
 let gravityFactors = require('./utils/earthGravityFactors.js');
 // Define a function to show user factors based on input type and value
 function calculateValues(chosenFactors, factorUnit) {
-// Initialize an object to hold the results
+    // Initialize an object to hold the results
     const factors = {};
-// Declare a variable to hold the unit of measurement
+    // Declare a variable to hold the unit of measurement
     let factorMeasurement;
-// Iterate over each item in the gravityFactors object
+    // Iterate over each item in the gravityFactors object
     for (let planet in gravityFactors) {
         // Calculate the factor multiplied by the input value and round it to two decimals
         factors[planet] = parseFloat((factorType * gravityFactors[planet]).toFixed(2));
     };
-// Switch case to determine the measurement unit based on factor type
-    switch (factorType) {
     // Switch case to determine the measurement unit based on factor type
-    switch (factoryType) {
+    switch (factorType) {
         case 'jump':
             factorMeasurement = 'cm';
             break;
@@ -43,25 +41,45 @@ function calculateValues(chosenFactors, factorUnit) {
 // Call the showUserFactors function with the user inputs and the gravity factors
 // Expose getUserFactors globally
 function getUserInput() {
-    console.log("Enter what you want to measure (please enter 'weight' or 'jump'");
-    const factorType = prompt('>>');
 
-    console.log("Enter what the value of your factor is (please enter )");
+    while (true) {
+        console.log("enter what you want to measure (please enter 'weight' or 'jump')");
+        const factorType = prompt('>>');
+        if (factorType) {
+            factorMeasurement = 
+                
+                
+                 switch (factorType) {
+                case 'jump':
+                    factorMeasurement = 'cm';
+                    break;
+                case 'weight':
+                    factorMeasurement = 'kg';
+                    break;
+                default:
+                    factorMeasurement = 'units';
+            };
+
+        };
+        break;
+    };
+	    else {
+        console.error("you're wrong")
+    }
+
+    console.log("enter what the value of your factor is (please enter )");
     const factorValue = prompt('>>');
 
-    
-    showUserFactors(factorType, factorValue);
-
-    console.log("Enter what the planet of your factor is (please enter )");
+    console.log("enter what the planet of your factor is (please enter )");
     const factorPlanets = prompt('>>');
 
-    console.log("Enter what the system of your factor is (please enter )");
+    console.log("enter what the system of your factor is (please enter )");
     const factorSystem = prompt('>>');
 
-    console.log("Enter what the measurement of your factor is (please enter )");
+    console.log("enter what the measurement of your factor is (please enter )");
     const factorMeasurement = prompt('>>');
 
-
+    showUserFactors(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
 }
 
 
