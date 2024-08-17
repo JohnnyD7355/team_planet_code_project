@@ -43,9 +43,28 @@ function calculateValues(chosenFactors, factorUnit) {
 // Prompt the user to enter the numerical value of the factor
 // Call the showUserFactors function with the user inputs and the gravity factors
 // Expose getUserFactors globally
+// let factorType;
 function getUserInput() {
 
     while (true) {
+        console.log("enter what you want to measure (please enter 'weight' or 'jump' or 'pushups");
+        const factorType = prompt('>>').trim().toLowerCase();
+        if (factorType === "weight" || factorType === "jump" || factorType === "pushups") {
+            break;
+        } else {
+            console.error(`You entered ${factorType} which is not valid!`);
+        }
+    };
+
+    while (true) {
+        console.log("enter what you want to measure (please enter 'metric' or 'imperial'");
+        const factorMeasurement = prompt('>>').trim().toLowerCase();
+        if (factorMeasurement === "metric" || factorMeasurement === "imperial") {
+            break;
+        } else {
+            console.error(`You entered ${factorMeasurement} which is not valid!`);
+        }
+    };
         console.log("enter what you want to measure (please enter 'weight' or 'jump')");
         const factorType = prompt('>>');
         if (factorType) {
@@ -64,6 +83,15 @@ function getUserInput() {
         //         factorMeasurement = 'units';
         // };
 
+    while (true) {
+        console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
+        const factorMeasurement = prompt('>>').trim().toLowerCase();
+        if (factorMeasurement === "meters" || factorMeasurement === "kilograms" || factorMeasurement === "miles" || factorMeasurement === "pounds") {
+            break;
+        } else {
+            console.error(`You entered ${factorMeasurement} which is not valid!`);
+        }
+    };
     };
     break;
 };
@@ -83,9 +111,10 @@ const factorSystem = prompt('>>');
 console.log("enter what the measurement of your factor is (please enter )");
 const factorMeasurement = prompt('>>');
 
+    calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
 showUserFactors(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
 }
 
 
-global.showUserFactors = showUserFactors;
+global.calculateValues = calculateValues;
 global.getUserInput = getUserInput;
