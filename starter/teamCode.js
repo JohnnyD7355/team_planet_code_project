@@ -72,17 +72,7 @@ function getUserInput() {
 
 
         }
-        //      switch (factorType) {
-        //     case 'jump':
-        //         factorMeasurement = 'cm';
-        //         break;
-        //     case 'weight':
-        //         factorMeasurement = 'kg';
-        //         break;
-        //     default:
-        //         factorMeasurement = 'units';
-        // };
-
+     
     while (true) {
         console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
         const factorMeasurement = prompt('>>').trim().toLowerCase();
@@ -93,11 +83,6 @@ function getUserInput() {
         }
     };
     };
-    break;
-};
-	    else {
-    console.error("you're wrong")
-}
 
 console.log("enter what the value of your factor is (please enter )");
 const factorValue = prompt('>>');
@@ -112,8 +97,7 @@ console.log("enter what the measurement of your factor is (please enter )");
 const factorMeasurement = prompt('>>');
 
     calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
-showUserFactors(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
-}
+
 
 
 global.calculateValues = calculateValues;
