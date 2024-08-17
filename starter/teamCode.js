@@ -1,3 +1,6 @@
+jumpWeight = ["jump", "weight"];
+
+
 // Import the prompt-sync library to handle user input
 const prompt = require('prompt-sync')();
 // Import the gravityFactors module which contains factors for different planets
@@ -46,40 +49,41 @@ function getUserInput() {
         console.log("enter what you want to measure (please enter 'weight' or 'jump')");
         const factorType = prompt('>>');
         if (factorType) {
-            factorMeasurement = 
-                
-                
-                 switch (factorType) {
-                case 'jump':
-                    factorMeasurement = 'cm';
-                    break;
-                case 'weight':
-                    factorMeasurement = 'kg';
-                    break;
-                default:
-                    factorMeasurement = 'units';
-            };
 
-        };
-        break;
+
+
+        }
+        //      switch (factorType) {
+        //     case 'jump':
+        //         factorMeasurement = 'cm';
+        //         break;
+        //     case 'weight':
+        //         factorMeasurement = 'kg';
+        //         break;
+        //     default:
+        //         factorMeasurement = 'units';
+        // };
+
     };
+    break;
+};
 	    else {
-        console.error("you're wrong")
-    }
+    console.error("you're wrong")
+}
 
-    console.log("enter what the value of your factor is (please enter )");
-    const factorValue = prompt('>>');
+console.log("enter what the value of your factor is (please enter )");
+const factorValue = prompt('>>');
 
-    console.log("enter what the planet of your factor is (please enter )");
-    const factorPlanets = prompt('>>');
+console.log("enter what the planet of your factor is (please enter )");
+const factorPlanets = prompt('>>');
 
-    console.log("enter what the system of your factor is (please enter )");
-    const factorSystem = prompt('>>');
+console.log("enter what the system of your factor is (please enter )");
+const factorSystem = prompt('>>');
 
-    console.log("enter what the measurement of your factor is (please enter )");
-    const factorMeasurement = prompt('>>');
+console.log("enter what the measurement of your factor is (please enter )");
+const factorMeasurement = prompt('>>');
 
-    showUserFactors(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
+showUserFactors(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
 }
 
 
