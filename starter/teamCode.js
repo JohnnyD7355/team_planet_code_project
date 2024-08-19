@@ -92,28 +92,28 @@ function getUserInput() {
             console.error(`You entered ${factorMeasurement} which is not valid!`);
         }
     };
+    calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
+    showUserFactors(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
 };
-break;
-};
-	    else {
-    console.error("you're wrong")
-}
 
-console.log("enter what the value of your factor is (please enter )");
-const factorValue = prompt('>>');
+// console.error("you're wrong")
 
-console.log("enter what the planet of your factor is (please enter )");
-const factorPlanets = prompt('>>');
 
-console.log("enter what the system of your factor is (please enter )");
-const factorSystem = prompt('>>');
+// console.log("enter what the value of your factor is (please enter )");
+// const factorValue = prompt('>>');
 
-console.log("enter what the measurement of your factor is (please enter )");
-const factorMeasurement = prompt('>>');
+// console.log("enter what the planet of your factor is (please enter )");
+// const factorPlanets = prompt('>>');
 
-calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
-showUserFactors(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
-}
+// console.log("enter what the system of your factor is (please enter )");
+// const factorSystem = prompt('>>');
+
+// console.log("enter what the measurement of your factor is (please enter )");
+// const factorMeasurement = prompt('>>');
+
+// calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
+// showUserFactors(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
+
 
 
 global.calculateValues = calculateValues;
