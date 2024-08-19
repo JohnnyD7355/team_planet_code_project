@@ -66,29 +66,27 @@ function getUserInput() {
         }
     };
 
-    while (true) {
-        console.log("enter what you want to measure (please enter 'weight' or 'jump' or 'pushups");
-        const factorType = prompt('>>').trim().toLowerCase();
-        if (factorType === "weight" || factorType === "jump" || factorType === "pushups") {
-            break;
-        } else {
-            console.error(`You entered ${factorType} which is not valid!`);
-        }
+        //     console.log("enter what you want to measure (please enter 'weight' or 'jump')");
+        //     const factorType = prompt('>>');
+        // if (factorType) {
+        // console.log("enter what you want to measure (please enter 'weight' or 'jump')");
+        // const factorType = prompt('>>');
+        // if (factorType) {
+        // }
+     
+        while (true) {
+            console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
+            const factorMeasurement = prompt('>>').trim().toLowerCase();
+            if (factorMeasurement === "kg" || factorMeasurement === "lbs" || factorMeasurement === "cm" || factorMeasurement === "in") {
+                break;
+            } else {
+                console.error(`You entered ${factorMeasurement} which is not valid!`);
+            }
+            calculateValues(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
+            showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
+        };
     };
-
-    while (true) {
-        console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
-        const factorMeasurement = prompt('>>').trim().toLowerCase();
-        if (factorMeasurement === "distance" || factorMeasurement === "kilograms" || factorMeasurement === "miles" || factorMeasurement === "pounds") {
-            break;
-        } else {
-            console.error(`You entered ${factorMeasurement} which is not valid!`);
-        }
-        calculateValues(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
-        showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
-    };
-};
-    
+    // };
 
 // console.log("enter what the value of your factor is (please enter )");
 // const factorValue = prompt('>>');
