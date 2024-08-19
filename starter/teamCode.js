@@ -65,20 +65,26 @@ function getUserInput() {
             console.error(`You entered ${factorSystem} which is not valid!`);
         }
     };
+        console.log("enter what you want to measure (please enter 'weight' or 'jump')");
+        const factorType = prompt('>>');
+    if (factorType) {
 
         // console.log("enter what you want to measure (please enter 'weight' or 'jump')");
         // const factorType = prompt('>>');
         // if (factorType) {
         // }
      
-    while (true) {
-        console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
-        const factorMeasurement = prompt('>>').trim().toLowerCase();
-        if (factorMeasurement === "distance" || factorMeasurement === "kilograms" || factorMeasurement === "miles" || factorMeasurement === "pounds") {
-            break;
-        } else {
-            console.error(`You entered ${factorMeasurement} which is not valid!`);
-        }
+        while (true) {
+            console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
+            const factorMeasurement = prompt('>>').trim().toLowerCase();
+            if (factorMeasurement === "distance" || factorMeasurement === "kilograms" || factorMeasurement === "miles" || factorMeasurement === "pounds") {
+                break;
+            } else {
+                console.error(`You entered ${factorMeasurement} which is not valid!`);
+            }
+            calculateValues(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
+            showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
+        };
     };
     };
 
@@ -94,7 +100,7 @@ function getUserInput() {
 // console.log("enter what the measurement of your factor is (please enter )");
 // const factorMeasurement = prompt('>>');
 
-calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
+    // calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
 
 
 global.calculateValues = calculateValues;
