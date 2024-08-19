@@ -65,10 +65,10 @@ function getUserInput() {
             console.error(`You entered ${factorSystem} which is not valid!`);
         }
     };
-        console.log("enter what you want to measure (please enter 'weight' or 'jump')");
-        const factorType = prompt('>>');
-    if (factorType) {
 
+        //     console.log("enter what you want to measure (please enter 'weight' or 'jump')");
+        //     const factorType = prompt('>>');
+        // if (factorType) {
         // console.log("enter what you want to measure (please enter 'weight' or 'jump')");
         // const factorType = prompt('>>');
         // if (factorType) {
@@ -77,7 +77,7 @@ function getUserInput() {
         while (true) {
             console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
             const factorMeasurement = prompt('>>').trim().toLowerCase();
-            if (factorMeasurement === "distance" || factorMeasurement === "kilograms" || factorMeasurement === "miles" || factorMeasurement === "pounds") {
+            if (factorMeasurement === "kg" || factorMeasurement === "lbs" || factorMeasurement === "cm" || factorMeasurement === "in") {
                 break;
             } else {
                 console.error(`You entered ${factorMeasurement} which is not valid!`);
@@ -86,7 +86,7 @@ function getUserInput() {
             showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
         };
     };
-    };
+    // };
 
 // console.log("enter what the value of your factor is (please enter )");
 // const factorValue = prompt('>>');
