@@ -57,28 +57,35 @@ function getUserInput() {
         } else {
             console.error(`You entered ${factorType} which is not valid!`);
         }
+
     };
 
-    while (true) {
-        console.log("enter what you want to measure (please enter 'metric' or 'imperial'");
-        const factorSystem = prompt('>>').trim().toLowerCase();
-        if (factorSystem === "metric" || factorSystem === "imperial") {
-            break;
-        } else {
-            console.error(`You entered ${factorSystem} which is not valid!`);
-        }
-    };
 
-    while (true) {
-        console.log("enter what you want to measure (please enter 'cm' or 'kg' or 'units'");
-        const factorMeasurement = prompt('>>').trim().toLowerCase();
-        if (factorMeasurement === "cm" || factorMeasurement === "kg" || factorMeasurement === "units") {
-            break;
-        } else {
-            console.error(`You entered ${factorMeasurement} which is not valid!`);
-        }
-    };
+    if (factorType !== "pushups") {
+        while (true) {
+            console.log("enter what you want to measure (please enter 'metric' or 'imperial'");
+            const factorSystem = prompt('>>').trim().toLowerCase();
+            if (factorSystem === "metric" || factorSystem === "imperial") {
+                break;
+            } else {
+                console.error(`You entered ${factorSystem} which is not valid!`);
+            }
+        };
+    }
 
+    //let repititions = factorMeasurement
+        while (true) {
+            // console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
+            const factorMeasurement = prompt('>>').trim().toLowerCase();
+            if (factorMeasurement === "kg" || factorMeasurement === "cm" || factorMeasurement === "units") {
+                break;
+            } else {
+                console.error(`You entered ${factorMeasurement} which is not valid!`);
+            }
+            calculateValues(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
+            showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
+    };
+    
     while (true) {
         console.log("enter what your value is");
         const factorValue = prompt('>>').trim().toLowerCase();
@@ -88,6 +95,7 @@ function getUserInput() {
             console.error(`You entered ${factorValue} which is not valid!`);
         }
     };
+
 
     while (true) {
         console.log("enter what planet system you want ('earth' or 'alien')");
