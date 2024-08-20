@@ -54,28 +54,26 @@ function getUserInput() {
         } else {
             console.error(`You entered ${factorType} which is not valid!`);
         }
+
     };
 
-    while (true) {
-        console.log("enter what you want to measure (please enter 'metric' or 'imperial'");
-        const factorSystem = prompt('>>').trim().toLowerCase();
-        if (factorSystem === "metric" || factorSystem === "imperial") {
-            break;
-        } else {
-            console.error(`You entered ${factorSystem} which is not valid!`);
-        }
-    };
 
-        //     console.log("enter what you want to measure (please enter 'weight' or 'jump')");
-        //     const factorType = prompt('>>');
-        // if (factorType) {
-        // console.log("enter what you want to measure (please enter 'weight' or 'jump')");
-        // const factorType = prompt('>>');
-        // if (factorType) {
-        // }
-     
+    if (factorType !== "pushups") {
         while (true) {
-            console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
+            console.log("enter what you want to measure (please enter 'metric' or 'imperial'");
+            const factorSystem = prompt('>>').trim().toLowerCase();
+            if (factorSystem === "metric" || factorSystem === "imperial") {
+                break;
+            } else {
+                console.error(`You entered ${factorSystem} which is not valid!`);
+            }
+        };
+    }
+
+
+    //let repititions = factorMeasurement
+        while (true) {
+            // console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
             const factorMeasurement = prompt('>>').trim().toLowerCase();
             if (factorMeasurement === "kg" || factorMeasurement === "lbs" || factorMeasurement === "cm" || factorMeasurement === "in") {
                 break;
@@ -86,22 +84,6 @@ function getUserInput() {
             showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
         };
     };
-    // };
-
-// console.log("enter what the value of your factor is (please enter )");
-// const factorValue = prompt('>>');
-
-// console.log("enter what the planet of your factor is (please enter )");
-// const factorPlanets = prompt('>>');
-
-// console.log("enter what the system of your factor is (please enter )");
-// const factorSystem = prompt('>>');
-
-// console.log("enter what the measurement of your factor is (please enter )");
-// const factorMeasurement = prompt('>>');
-
-// calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
-
 
 global.calculateValues = calculateValues;
 global.getUserInput = getUserInput;
