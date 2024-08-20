@@ -66,42 +66,40 @@ function getUserInput() {
         }
     };
 
-        //     console.log("enter what you want to measure (please enter 'weight' or 'jump')");
-        //     const factorType = prompt('>>');
-        // if (factorType) {
-        // console.log("enter what you want to measure (please enter 'weight' or 'jump')");
-        // const factorType = prompt('>>');
-        // if (factorType) {
-        // }
-     
-        while (true) {
-            console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
-            const factorMeasurement = prompt('>>').trim().toLowerCase();
-            if (factorMeasurement === "kg" || factorMeasurement === "lbs" || factorMeasurement === "cm" || factorMeasurement === "in") {
-                break;
-            } else {
-                console.error(`You entered ${factorMeasurement} which is not valid!`);
-            }
-            calculateValues(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
-            showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
-        };
+    while (true) {
+        console.log("enter what you want to measure (please enter 'cm' or 'kg' or 'units'");
+        const factorMeasurement = prompt('>>').trim().toLowerCase();
+        if (factorMeasurement === "cm" || factorMeasurement === "kg" || factorMeasurement === "units") {
+            break;
+        } else {
+            console.error(`You entered ${factorMeasurement} which is not valid!`);
+        }
     };
-    // };
 
-// console.log("enter what the value of your factor is (please enter )");
-// const factorValue = prompt('>>');
+    while (true) {
+        console.log("enter what your value is");
+        const factorValue = prompt('>>').trim().toLowerCase();
+        if (!isNaN(factorValue)) {
+            break;
+        } else {
+            console.error(`You entered ${factorValue} which is not valid!`);
+        }
+    };
 
-// console.log("enter what the planet of your factor is (please enter )");
-// const factorPlanets = prompt('>>');
+    while (true) {
+        console.log("enter what planet system you want ('earth' or 'alien')");
+        const factorPlanets = prompt('>>').trim().toLowerCase();
+        if (factorPlanets === "earth" || factorPlanets === "alien") {
+            break;
+        } else {
+            console.error(`You entered ${factorPlanets} which is not valid!`);
+        }
+    };
 
-// console.log("enter what the system of your factor is (please enter )");
-// const factorSystem = prompt('>>');
+};
 
-// console.log("enter what the measurement of your factor is (please enter )");
-// const factorMeasurement = prompt('>>');
-
-// calculateValues(factorType, factorValue, factorPlanets, factorSystem, factorMeasurement);
-
+// calculateValues(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
+// showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
 
 global.calculateValues = calculateValues;
 global.getUserInput = getUserInput;
