@@ -70,20 +70,44 @@ function getUserInput() {
         };
     }
 
-
     //let repititions = factorMeasurement
         while (true) {
             // console.log("enter what you want to measure (please enter 'meters' or 'kilograms' or 'miles' or 'pounds'");
             const factorMeasurement = prompt('>>').trim().toLowerCase();
-            if (factorMeasurement === "kg" || factorMeasurement === "lbs" || factorMeasurement === "cm" || factorMeasurement === "in") {
+            if (factorMeasurement === "kg" || factorMeasurement === "cm" || factorMeasurement === "units") {
                 break;
             } else {
                 console.error(`You entered ${factorMeasurement} which is not valid!`);
             }
             calculateValues(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
             showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
-        };
     };
+    
+    while (true) {
+        console.log("enter what your value is");
+        const factorValue = prompt('>>').trim().toLowerCase();
+        if (!isNaN(factorValue)) {
+            break;
+        } else {
+            console.error(`You entered ${factorValue} which is not valid!`);
+        }
+    };
+
+
+    while (true) {
+        console.log("enter what planet system you want ('earth' or 'alien')");
+        const factorPlanets = prompt('>>').trim().toLowerCase();
+        if (factorPlanets === "earth" || factorPlanets === "alien") {
+            break;
+        } else {
+            console.error(`You entered ${factorPlanets} which is not valid!`);
+        }
+    };
+
+};
+
+// calculateValues(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
+// showUserFactors(factorType, factorValue, FactorPlanets, factorSystem, factorMeasurement);
 
 global.calculateValues = calculateValues;
 global.getUserInput = getUserInput;
