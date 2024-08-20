@@ -47,9 +47,12 @@ function calculateValues(chosenFactors, factorUnit) {
 function getUserInput() {
 
     while (true) {
-        console.log("enter what you want to measure (please enter 'weight' or 'jump' or 'pushups");
+        console.log("enter what you want to measure (please enter 'weight' or 'jump' or 'pushups'");
         const factorType = prompt('>>').trim().toLowerCase();
-        if (factorType === "weight" || factorType === "jump" || factorType === "pushups") {
+        if (factorType === "weight" || factorType === "jump") {
+            break;
+        } else if (factorType === "pushups") {
+            console.log("how many repetitions?");
             break;
         } else {
             console.error(`You entered ${factorType} which is not valid!`);
